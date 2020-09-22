@@ -13,7 +13,7 @@ function App(props) {
     return (
         <>   
             // Name of your icon
-            <IconAnimate icon={nameOfIcon}>
+            <IconAnimate icon={'nameOfIcon'}>
         </>
     );
 }

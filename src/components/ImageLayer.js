@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect, useRef, useState } from 'react';
-import { getSVGCenter, outBack } from '../util'
+import { getSVGCenter, outBack, inOutQuint} from '../util'
 
 const ImageLayer = (props) => {
     const requestRef = useRef();
@@ -21,12 +21,6 @@ const ImageLayer = (props) => {
         currentWave: 0
     }
 
-
-    const inOutQuint = function(n){
-        n *= 2;
-        if (n < 1) return 0.5 * n * n * n * n * n;
-        return 0.5 * ((n -= 2) * n * n * n * n + 2);
-      };
 
     const backLayers = progress => {
 

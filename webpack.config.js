@@ -38,7 +38,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, "./build"),
         watchContentBase: true,
         compress: true,
-        port: 9000
+        port: 9005
     },
     plugins: [
         new HtmlWebpackPlugin({
