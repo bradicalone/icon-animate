@@ -66,8 +66,6 @@ const Alarm = (props) => {
         rightRing.current.style.transform = `rotate(${ringerDegree}deg)`
         leftRing.current.style.transform = `rotate(${ringerDegree}deg)`
 
-
-
         if (progress < 1){
             if(ringProgress === 1){
                 // Starts ringers over again
@@ -91,11 +89,10 @@ const Alarm = (props) => {
 
     return (
         <div className="container">
-            <svg width="10rem" height="10rem" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            <svg width="20em" height="20em" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 551.1 551.2" xmlSpace="preserve">
                 <style type="text/css">{
-                    ".st0{fill:#176096;}"+
-                    ".st2{stroke:#000000;stroke-width:34;stroke-linecap:round;stroke-miterlimit:10;}"
+                    ".alarm-st2{stroke:#000000;stroke-width:34;stroke-linecap:round;stroke-miterlimit:10;}"
                 }</style>
                 <path ref={leftRing} className="left-ring" d="M150.2, 64.6 C 99.2, 91, 57.6, 132.9, 31.6, 184.1 c -4.9 -3.4 -9.4 -7.4 -13.5 -12
                 c-28.4-32.5-22.7-84, 12.7 -115 c 35.4-31, 87.2 -29.7, 115.6, 2.8C147.8,61.4,149,63,150.2,64.6z"/>
@@ -109,8 +106,8 @@ const Alarm = (props) => {
                 c-34,0-66.1-8.1-94.5-22.5c-5.1-2.6-10.1-5.4-14.9-8.4c-4.8-2.9-9.4-6.1-13.9-9.4c-51.8-38-85.5-99.3-85.5-168.5
                 c0-115.3,93.5-208.8,208.8-208.8s208.8,93.5,208.8,208.8c0,68.8-33.3,129.8-84.6,167.8C395.7,479.3,391.1,482.4,386.3,485.4z"/>
                 <g id="hands">
-                    <line ref={hour} className="st2" x1="280" y1="308.5" x2="280" y2="198.3"/>
-                    <line ref={minute} className="st2" x1="280" y1="308.5" x2="224.8" y2="403.8"/>
+                    <line ref={hour} className="alarm-st2" x1="280" y1="308.5" x2="280" y2="198.3"/>
+                    <line ref={minute} className="alarm-st2" x1="280" y1="308.5" x2="224.8" y2="403.8"/>
                 </g>
             </svg>
         </div>

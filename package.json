@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --hot",
     "dev": "(npm run build & npm run start) || (start npm run build && start npm run start)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

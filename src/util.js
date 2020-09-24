@@ -1,20 +1,37 @@
+// Gets svg top middle or bottom center
 export const getSVGCenter = (element, location) => {
-
     const { x, y, width, height } = element.getBBox()
     if (location === 'top') {
         const centerX = x + (width / 2)
-        const centerY = y / 2
+        const centerY = y 
         element.style.transformOrigin = `${centerX}px ${centerY}px`
     } else if (location === 'bottom') {
         const centerX = x + (width / 2)
         const centerY = y + height
         element.style.transformOrigin = `${centerX}px ${centerY}px`
         return { X: centerX, Y: centerY }
-        // center
+    // center
     } else {
         const centerX = x + (width / 2)
         const centerY = y + (height / 2)
         element.style.transformOrigin = `${centerX}px ${centerY}px`
+    }
+}
+
+// Gets svg path length
+export const getSvgEementLength = el => {
+    const constructor = el.constructor
+   
+    switch (constructor) {
+        case SVGPolylineElement: 
+            return this.getSvgPolylineLength(el);
+        case SVGLineElement: 
+            return ((x1, x2, y1, y2) => Math.sqrt( (x2-=x1)*x2 + (y2-=y1)*y2 ))(el.getAttribute('x1'), el.getAttribute('x2'),
+                                    el.getAttribute('y1'), el.getAttribute('y2'));
+        case SVGRectElement: 
+            return (el.getAttribute('width')*2) + (el.getAttribute('height')*2);
+        case SVGPathElement: 
+            return el.getTotalLength();
     }
 }
 
@@ -49,6 +66,12 @@ export const inOutBack = n => {
     return 0.5 * ((n -= 2) * n * ((s + 1) * n + s) + 2);
 };
 
+
+// Ease out slow
+export const outQuad = n => {
+    return n * (2 - n);
+};
+
 export const inOutQuint = n => {
     n *= 2;
     if (n < 1) return 0.5 * n * n * n * n * n;
@@ -56,16 +79,16 @@ export const inOutQuint = n => {
 };
 
 // Ease in and out
-const inOutExpo = n => {
+export const inOutExpo = n => {
     if (0 == n) return 0;
     if (1 == n) return 1;
     if ((n *= 2) < 1) return .5 * Math.pow(1024, n - 1);
     return .5 * (-Math.pow(2, -10 * (n - 1)) + 2);
 };
 
-const inSine = n => {
-    return 1 - Math.cos(n * Math.PI / 2 );
-};
+export const inSine = n => 1 - Math.cos(n * Math.PI / 2 );
+
+export const inQuint = n => n * n * n * n * n
 
 
 

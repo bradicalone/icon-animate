@@ -34,11 +34,12 @@ module.exports = {
         ]
     },
     devServer: {
-        publicPath: '/public',
+        publicPath: '/build/',
         contentBase: path.resolve(__dirname, "./build"),
         watchContentBase: true,
         compress: true,
-        port: 9005
+        port: 9005,
+        hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({

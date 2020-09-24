@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect, useState } from 'react';
-import SVG from '../../public/vintage-game.svg'
+import SVG from '../../public/got-mail.svg'
 
 import convert from 'convert-svg-react'
 

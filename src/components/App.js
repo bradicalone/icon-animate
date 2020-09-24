@@ -8,6 +8,8 @@ import ImageLayer from './ImageLayer'
 import Flag from './Flag'
 import TrafficCone from './TrafficCone'
 import VintageController from './VintageController'
+import FingerPrint from './FingerPrint'
+import GotMail from './GotMail'
 
 function App(props) {
     const [test, setTest] = useState('')
@@ -18,7 +20,7 @@ function App(props) {
 
     return (
         <>      
-            <GetSVG />
+            {/* <GetSVG /> */}
             {/* <Alarm /> */}
             {/* <Layers /> */}
             {/* <Rocket /> */}
@@ -26,7 +28,9 @@ function App(props) {
             {/* <ImageLayer /> */}
             {/* <Flag /> */}
             {/* <TrafficCone /> */}
-            <VintageController />
+            {/* <VintageController /> */}
+            {/* <FingerPrint /> */}
+            {/* {<GotMail />} */}
         </>
     );
 }
