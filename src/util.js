@@ -1,13 +1,23 @@
 // Gets svg top middle or bottom center
 export const getSVGCenter = (element, location) => {
     const { x, y, width, height } = element.getBBox()
+
     if (location === 'top') {
         const centerX = x + (width / 2)
         const centerY = y 
         element.style.transformOrigin = `${centerX}px ${centerY}px`
+        return { X: centerX, Y: y }
     } else if (location === 'bottom') {
         const centerX = x + (width / 2)
         const centerY = y + height
+        element.style.transformOrigin = `${centerX}px ${centerY}px`
+        return { X: centerX, Y: centerY }
+    } else if(location === 'topLeft') {
+        element.style.transformOrigin = `${x}px ${y}px`
+        return { X: x, Y: y }
+    } else if(location === 'topRight') {
+        const centerX = x + width
+        const centerY = y
         element.style.transformOrigin = `${centerX}px ${centerY}px`
         return { X: centerX, Y: centerY }
     // center
@@ -15,6 +25,7 @@ export const getSVGCenter = (element, location) => {
         const centerX = x + (width / 2)
         const centerY = y + (height / 2)
         element.style.transformOrigin = `${centerX}px ${centerY}px`
+        return { X: centerX, Y: centerY }
     }
 }
 
@@ -66,8 +77,7 @@ export const inOutBack = n => {
     return 0.5 * ((n -= 2) * n * ((s + 1) * n + s) + 2);
 };
 
-
-// Ease out slow
+// Ease out slow ** MOST USED **
 export const outQuad = n => {
     return n * (2 - n);
 };

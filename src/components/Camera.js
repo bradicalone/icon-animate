@@ -21,7 +21,6 @@ const Camera = (props) => {
     }
 
     const focusRingFlash = progress => {
-        
         if(data.index <= 3) {
             const ease = outExpo(progress)
             const FocusInOut = data.currentFocus - (ease * data.focusValues[data.index])
@@ -36,7 +35,6 @@ const Camera = (props) => {
             const Flash = Math.sin(ease * Math.PI ) * 200
             flash.current.style.transform = `scale(${Flash})`
             flash.current.style.opacity = 1 - (ease * .7)
- 
         }
     }
 
@@ -49,10 +47,10 @@ const Camera = (props) => {
         if (progress < 1){
             requestRef.current = requestAnimationFrame(animate);
         } else if (data.index++ <= 4) {
-                start.current = 0
-                current && (data.currentFocus = current.FocusInOut)
-                current && (data.currentRotate = current.Rotate )
-                requestRef.current = requestAnimationFrame(animate);
+            start.current = 0
+            current && (data.currentFocus = current.FocusInOut)
+            current && (data.currentRotate = current.Rotate )
+            requestRef.current = requestAnimationFrame(animate);
         } else {
             reset()
             setTimeout(() => requestRef.current = requestAnimationFrame(animate), data.delay)
@@ -71,7 +69,6 @@ const Camera = (props) => {
         getSVGCenter(flash.current)
         getSVGCenter(rotateRing.current)
  
-
         requestRef.current = requestAnimationFrame(animate);
         return () => rcancelAnimationFrame(requestRef.current)
     }, [])
