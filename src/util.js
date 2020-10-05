@@ -29,6 +29,8 @@ export const getSVGCenter = (element, location) => {
     }
 }
 
+export const wave = (progress) => Math.sin(progress * (Math.PI * 3) ).toFixed(4)
+
 // Gets svg path length
 export const getSvgEementLength = el => {
     const constructor = el.constructor
