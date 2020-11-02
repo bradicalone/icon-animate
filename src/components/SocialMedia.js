@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
-import SocialMedia from './SocialMedia'
 import Alarm from './icons/Alarm'
 import Layers from './icons/Layers'
 import GetSVG from './icons/GetSVG'
@@ -21,15 +20,22 @@ import Pixel from './icons/Pixel'
 import {getValues} from '../actions/processValues'
 import FindReplace from './icons/FindReplace';
 import DeskLamp from './icons/DeskLamp';
-import './index.css'
 
-
-function App(props) {
+const SocialMedia = (props) => {
     const [test, setTest] = useState('')
 
     useEffect(()=> {
         props.dispatch(getValues(props))
     },[])
+
+    const styles = {
+        background: '#6ed7fa',
+        width: '500px',
+        height: '500px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 
     return (
         <>      
@@ -51,8 +57,10 @@ function App(props) {
             {/* <FindPage /> */}
             {/* <Pixel /> */}
             {/* <FindReplace /> */}
-            {/* <DeskLamp /> */}
-            <SocialMedia />
+            <div className="container-fluid" style={styles}>
+                {/* <DeskLamp />  */}
+            </div>
+            
         </>
     );
 }
@@ -61,6 +69,4 @@ const mapStateToProps = state => {
         svgData: state.data
     }
 }
-export default connect(mapStateToProps)(App)
-
-
+export default connect(mapStateToProps)(SocialMedia)

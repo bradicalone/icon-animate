@@ -79,6 +79,12 @@ export const inOutBack = n => {
     return 0.5 * ((n -= 2) * n * ((s + 1) * n + s) + 2);
 };
 
+export const inOutQuad = n => {
+    n *= 2;
+    if (n < 1) return 0.5 * n * n;
+    return - 0.5 * (--n * (n - 2) - 1);
+};
+
 // Ease out slow ** MOST USED **
 export const outQuad = n => {
     return n * (2 - n);
@@ -101,6 +107,8 @@ export const inOutExpo = n => {
 export const inSine = n => 1 - Math.cos(n * Math.PI / 2 );
 
 export const inQuint = n => n * n * n * n * n
+
+export const outCube = n => --n * n * n + 1;
 
 
 
