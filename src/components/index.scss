@@ -9,3 +9,42 @@ body, html {
     justify-content: center;
     height: 100%;
 }
+.groundBottom {
+    background: #548ed4;
+    width: 500px;
+    height: 25px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 120px;
+}
+.groundTop {
+    background: #62204f;
+    width: 400px;
+    height: 9px;
+    display: block;
+    border-radius: 39%;
+    position: absolute;
+    bottom: 137px;
+}
+
+.button-group {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    .button {
+        display: inline-block;
+        border-radius: 50%;
+        height: 13px;
+        width: 13px;
+        background-color: red;
+        margin: 2px;
+    }
+    .button:nth-child(2) {
+        background-color: orange;
+    }
+    .button:nth-child(3) {
+        background-color: #5858e2;
+    }
+}

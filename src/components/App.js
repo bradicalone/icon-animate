@@ -21,6 +21,12 @@ import Pixel from './icons/Pixel'
 import {getValues} from '../actions/processValues'
 import FindReplace from './icons/FindReplace';
 import DeskLamp from './icons/DeskLamp';
+import IconRightEnd from './icons/Icon-right-end';
+import IconLeftEnd from './icons/Icon-left-end';
+import Showtime from './icons/Showtime';
+import AllWorld from './icons/AllWorld';
+import RaceBike from './icons/RaceBike';
+
 import './index.css'
 
 
@@ -53,6 +59,11 @@ function App(props) {
             {/* <FindReplace /> */}
             {/* <DeskLamp /> */}
             <SocialMedia />
+            {/* <IconRightEnd /> */}
+            {/* <IconLeftEnd /> */}
+            {/* <Showtime /> */}
+            {/* <AllWorld />  */}
+            {/* <RaceBike /> */}
         </>
     );
 }
@@ -62,5 +73,4 @@ const mapStateToProps = state => {
     }
 }
 export default connect(mapStateToProps)(App)
-
 

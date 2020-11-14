@@ -34,8 +34,8 @@ module.exports = {
         ]
     },
     devServer: {
-        publicPath: '/build/',
-        contentBase: path.resolve(__dirname, "./build"),
+        // publicPath: '/build/',
+        // contentBase: path.resolve(__dirname, "./build"),
         watchContentBase: true,
         compress: true,
         port: 9005,

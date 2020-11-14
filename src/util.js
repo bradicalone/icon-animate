@@ -33,11 +33,25 @@ export const wave = (progress) => Math.sin(progress * (Math.PI * 3) ).toFixed(4)
 
 // Gets svg path length
 export const getSvgEementLength = el => {
+    const getSvgPolylineLength = el => {
+        let totalLength = 0;
+        let prevPos;
+        for (var i = 0 ; i < el.points.numberOfItems;i++) {
+            var pos = el.points.getItem(i);
+            if (i > 0) {
+                
+                totalLength += Math.sqrt(Math.pow((pos.x - prevPos.x), 2) + Math.pow((pos.y - prevPos.y), 2));
+            }
+            prevPos = pos;
+        }
+        return totalLength;
+    }
+
     const constructor = el.constructor
    
     switch (constructor) {
         case SVGPolylineElement: 
-            return this.getSvgPolylineLength(el);
+            return getSvgPolylineLength(el);
         case SVGLineElement: 
             return ((x1, x2, y1, y2) => Math.sqrt( (x2-=x1)*x2 + (y2-=y1)*y2 ))(el.getAttribute('x1'), el.getAttribute('x2'),
                                     el.getAttribute('y1'), el.getAttribute('y2'));
@@ -73,8 +87,22 @@ export const inBack = n => {
     return n * n * ((s + 1) * n - s);
 };
 
+export const inQuart = (n => n * n * n * n);
+
 export const inOutBack = n => {
     let s = 1.70158 * 1.525;
+    if ((n *= 2) < 1) return 0.5 * (n * n * ((s + 1) * n - s));
+    return 0.5 * ((n -= 2) * n * ((s + 1) * n + s) + 2);
+};
+
+export const inOutBackMedium = n => {
+    let s = 2.10158 * 1.825;
+    if ((n *= 2) < 1) return 0.5 * (n * n * ((s + 1) * n - s));
+    return 0.5 * ((n -= 2) * n * ((s + 1) * n + s) + 2);
+};
+
+export const inOutBackBig = n => {
+    let s = 2.90158 * 2.625;
     if ((n *= 2) < 1) return 0.5 * (n * n * ((s + 1) * n - s));
     return 0.5 * ((n -= 2) * n * ((s + 1) * n + s) + 2);
 };
@@ -110,5 +138,7 @@ export const inQuint = n => n * n * n * n * n
 
 export const outCube = n => --n * n * n + 1;
 
-
+export const inCirc = (n) => {
+    return 1 - Math.sqrt(1 - n * n);
+};
 
