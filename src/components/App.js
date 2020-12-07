@@ -26,6 +26,8 @@ import IconLeftEnd from './icons/Icon-left-end';
 import Showtime from './icons/Showtime';
 import AllWorld from './icons/AllWorld';
 import RaceBike from './icons/RaceBike';
+import Owl from './icons/Owl';
+import Parrot from './icons/Parrot';
 
 import './index.css'
 
@@ -58,18 +60,20 @@ function App(props) {
             {/* <Pixel /> */}
             {/* <FindReplace /> */}
             {/* <DeskLamp /> */}
-            <SocialMedia />
+            {/* <SocialMedia /> */}
             {/* <IconRightEnd /> */}
             {/* <IconLeftEnd /> */}
             {/* <Showtime /> */}
             {/* <AllWorld />  */}
             {/* <RaceBike /> */}
+            {/* <Owl /> */}
+            <Parrot />
         </>
     );
 }
 const mapStateToProps = state => {
     return {
-        svgData: state.data
+        svgData: state.data 
     }
 }
 export default connect(mapStateToProps)(App)

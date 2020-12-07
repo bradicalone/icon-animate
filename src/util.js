@@ -142,3 +142,13 @@ export const inCirc = (n) => {
     return 1 - Math.sqrt(1 - n * n);
 };
 
+export const getColor = element => {
+    const parent = element.parentElement
+    const color = window.getComputedStyle(element.parentElement, null).getPropertyValue("background-color")
+   if(color === 'rgba(0, 0, 0, 0)') {
+        return '#fff'
+    } else {
+        return color
+    }
+}
+

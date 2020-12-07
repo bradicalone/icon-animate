@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProduction = 'development';
 module.exports = {
     mode: "development",
-    entry: "./src/index.js",
+    entry: "./src/app.test.js",
     output: {
         path: path.resolve(__dirname, "./build"),
         filename: "bundle.js"
@@ -34,8 +34,8 @@ module.exports = {
         ]
     },
     devServer: {
-        // publicPath: '/build/',
-        // contentBase: path.resolve(__dirname, "./build"),
+        publicPath: '/build/',
+        contentBase: path.resolve(__dirname, "./build"),
         watchContentBase: true,
         compress: true,
         port: 9005,
@@ -46,5 +46,5 @@ module.exports = {
             template: './src/index.html',
         }),
     ],
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    // devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
 }

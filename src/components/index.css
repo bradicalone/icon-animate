@@ -10,24 +10,35 @@ body, html {
   height: 100%;
 }
 
+svg {
+  z-index: 1;
+}
+
+.ground {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 73%;
+}
+
 .groundBottom {
-  background: #548ed4;
+  background: #165964;
   width: 500px;
-  height: 25px;
+  height: 33px;
   display: block;
   border-radius: 50%;
-  position: absolute;
-  bottom: 120px;
+  position: relative;
 }
 
 .groundTop {
-  background: #62204f;
+  background: #218397;
   width: 400px;
-  height: 9px;
+  height: 20px;
   display: block;
-  border-radius: 39%;
-  position: absolute;
-  bottom: 137px;
+  border-radius: 46%;
+  position: relative;
+  bottom: 35px;
 }
 
 .button-group {
@@ -50,5 +61,5 @@ body, html {
 }
 
 .button-group .button:nth-child(3) {
-  background-color: #5858e2;
+  background-color: #346d00;
 }
